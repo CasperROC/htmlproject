@@ -46,68 +46,11 @@
     flex-wrap: wrap;
 }
 
-#uno {
-    background-color: white;
-    width: 300px;
-    border: 15px solid darkcyan;
-    padding: 50px;
-    margin: 20px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.5rem;
-    border-radius: 20px;
-}
-
-#dos {
-    background-color: rgb(255, 255, 255);
-    width: 300px;
-    border: 15px solid darkcyan;
-    padding: 50px;
-    margin: 20px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.5rem;
-    border-radius: 20px;
-}
-
-#tres {
-    background-color: white;
-    width: 300px;
-    border: 15px solid darkcyan;
-    padding: 50px;
-    margin: 20px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.5rem;
-    border-radius: 20px;
-}
-
-#cuatro {
-    background-color: white;
-    width: 300px;
-    border: 15px solid darkcyan;
-    padding: 50px;
-    margin: 20px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.5rem;
-    border-radius: 20px;
-    margin-bottom: 5rem;
-}
-
-#cinco {
-    background-color: white;
-    width: 300px;
-    border: 15px solid darkcyan;
-    padding: 50px;
-    margin: 20px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.5rem;
-    border-radius: 20px;
-    margin-bottom: 5rem;
-}
-
+#uno,
+#dos,
+#tres,
+#cuatro,
+#cinco,
 #seis {
     background-color: white;
     width: 300px;
@@ -118,8 +61,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.5rem;
     border-radius: 20px;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
+
+
 
 .prijs {
     font-size: xx-large;
@@ -155,19 +100,48 @@ a:hover {
     margin-left: 1.7rem;
 }
 
-.menu {
+.koopgrid {
     display: grid;
     grid-template-columns: 40% 60%;
     grid-template-rows: 25rem 12rem;
 }
 
+@media (max-width:600px) {
+    .koopgrid {
+        
+        grid-template-columns: 1fr;
+        gap: 10px;
+        justify-content: center;
+        grid-template-rows: auto;
+    }
+
+
+    .foto,
+    .main,
+    .desc {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin: 0;
+    }
+.main{
+    min-height: 100px;
+    height: auto;
+    word-wrap: break-word;
+}
+    #maintext {
+        font-size: 1rem;
+    }
+}
+
+
 .foto {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
-    font-size: 30px;
     text-align: center;
-    margin: 1.7rem
+    margin: 1.7rem;
+    border: 15px solid darkcyan;
+    border-radius: 20px;
 }
 
 .main {
@@ -180,19 +154,23 @@ a:hover {
     margin-top: 1.7rem;
     margin-bottom: 1.7rem;
     font-family: monospace;
+    min-height: 100px;
+    border: 15px solid darkcyan;
+    border-radius: 20px;
 }
 
 .desc {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
-    font-size: 1.6vw;
+    font-size: 1.15rem;
     text-align: center;
     grid-column: 1 / span 2;
     margin-left: 1.7rem;
     margin-right: 1.2rem;
     font-family: monospace;
-    font-size: 1.3vw;
+    border: 15px solid darkcyan;
+    border-radius: 20px;
 }
 
 #mainfoto {
@@ -205,7 +183,7 @@ a:hover {
 
 
 #maintext {
-    font-size: 1.4vw
+    font-size: 1.2rem;
 }
 
 #rood {
@@ -280,17 +258,19 @@ label {
     margin-top: auto;
     margin-bottom: 4.8rem;
 }
-.dropknop{
+
+.dropknop {
     background-color: transparent;
     border-color: transparent;
-    font-family:monospace;
-font-size:2rem;
-color:white;
+    font-family: monospace;
+    font-size: 2rem;
+    color: white;
 }
+
 .drop {
-    position: relative; /* Dit maakt de parent container de referentie voor .indrop */
+    position: relative;
     display: inline-block;
-padding-left: 2rem;
+    padding-left: 2rem;
 }
 
 
@@ -300,8 +280,8 @@ padding-left: 2rem;
     background-color: white;
     min-width: 160px;
     z-index: 1;
-    top: 100%; /* Zorg dat het direct onder de knop verschijnt */
-    left: 0; /* Zorg dat het uitlijnt met de knop */
+    top: 100%;
+    left: 0;
 }
 
 .indrop a {
@@ -325,13 +305,13 @@ padding-left: 2rem;
     background-color: lightskyblue;
 }
 
-.homeknop{
+.homeknop {
     color: white;
     text-decoration: none;
-padding-right: 2rem;
-text-align:center;
-background-color: transparent;
-border-color: transparent;
-font-family:monospace;
-font-size:2rem;
+    padding-right: 2rem;
+    text-align: center;
+    background-color: transparent;
+    border-color: transparent;
+    font-family: monospace;
+    font-size: 2rem;
 }
